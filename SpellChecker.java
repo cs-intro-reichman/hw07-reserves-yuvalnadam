@@ -74,8 +74,11 @@ public class SpellChecker {
 
 		for (int i = 0; i < dictionary.length; i++ ) {
 
-			if (levenshtein(dictionary[i], word) < threshold)
+			if (levenshtein(dictionary[i], word) <= threshold)
+			{
 				simliarWord = dictionary[i];
+				threshold = levenshtein(dictionary[i], word);
+			}
 
 			
 		}
